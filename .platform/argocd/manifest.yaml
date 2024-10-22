@@ -1,4 +1,4 @@
-apiVersion: example.org/v1alpha1
+apiVersion: aws.3sidedcube.com/v1alpha1
 kind: App
 metadata:
   name: example-app
