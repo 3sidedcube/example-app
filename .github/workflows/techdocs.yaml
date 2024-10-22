@@ -1,0 +1,38 @@
+name: Publish techdocs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  techdocs:
+    name: Publish techdocs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Configure AWS credentials (ECR)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ vars.TECHDOCS_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.TECHDOCS_AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.TECHDOCS_AWS_REGION }}
+
+      - name: Generate docs
+        run: npx @techdocs/cli generate
+
+      - name: Publish docs
+        run: |
+          npx @techdocs/cli publish \
+            --publisher-type awsS3 \
+            --storage-name ${{ vars.TECHDOCS_BUCKET_NAME }} \
+            --entity ${{ vars.BACKSTAGE_ENTITY }}

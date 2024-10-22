@@ -1,0 +1,31 @@
+name: Setup
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Post to a Slack channel
+        id: slack
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          channel-id: ${{ vars.PLATFORM_SLACK_CHANNEL_ID }}
+          payload: |
+            {
+              "text": "${{ github.event.repo.name }} repository created",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":construction: *${{ github.repository }} repository created*.\nPlease scaffold infrastructure and setup CI/CD.\n\nhttps://github.com/${{ github.repository }}"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

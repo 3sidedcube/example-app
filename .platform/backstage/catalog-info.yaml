@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: { { cookiecutter.name } }
+  description: { { cookiecutter.description } }
+  annotations:
+    backstage.io/source-location: url:https://github.com/3sidedcube/example-app
+    backstage.io/techdocs-ref: dir:../..
+    github.com/project-slug: 3sidedcube/example-app
+spec:
+  type: service
+  lifecycle: production
+  owner: 3sidedcube/platform
