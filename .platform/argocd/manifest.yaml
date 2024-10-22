@@ -1,0 +1,8 @@
+apiVersion: example.org/v1alpha1
+kind: App
+metadata:
+  name: example-app
+spec:
+  accountId: "381491948780"
+  name: example-app
+  region: eu-west-1
