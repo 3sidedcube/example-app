@@ -6,3 +6,24 @@ spec:
   accountId: "381491948780"
   name: example-app
   region: eu-west-1
+---
+apiVersion: aws.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: example-app-providerconfig
+spec:
+  assumeRoleChain:
+    - roleARN: arn:aws:iam::381491948780:role/tsc-platform-idp-service-role
+  credentials:
+    source: IRSA
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: VPC"
+metadata:
+  name: example-vpc
+spec:
+  forProvider:
+    region: eu-west-1
+    cidrBlock: 10.0.0.0/16
+  providerConfigRef:
+    name: example-app-providerconfig
