@@ -1,9 +1,9 @@
 apiVersion: aws.3sidedcube.com/v1alpha1
 kind: Network
 metadata:
-  name: example-app
+  name: client-project-environment
 spec:
-  name: example-app
+  name: client-project-environment
   region: eu-west-1
   cidrBlock: 10.0.0.0/16
   subnetCidr: 10.0.0.0/24
