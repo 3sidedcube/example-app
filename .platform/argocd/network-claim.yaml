@@ -7,4 +7,3 @@ spec:
   region: eu-west-1
   cidrBlock: 10.0.0.0/16
   subnetCidr: 10.0.0.0/24
-  providerConfigName: example-app-2nfwm-25vbk
