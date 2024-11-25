@@ -1,9 +1,10 @@
 apiVersion: aws.3sidedcube.com/v1alpha1
-kind: Network
+kind: App
 metadata:
-  name: example-network
+  name: example-app
 spec:
   name: example-app
+  roleARN: arn:aws:iam::381491948780:role/tsc-platform-idp-service-role
   region: eu-west-2
   cidrBlock: 10.0.0.0/16
   availabilityZones:
