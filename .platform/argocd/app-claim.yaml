@@ -4,11 +4,5 @@ metadata:
   name: example-app
 spec:
   name: example-app
-  roleARN: arn:aws:iam::381491948780:role/tsc-platform-idp-service-role
   region: eu-west-2
-  network:
-    cidrBlock: 10.0.0.0/16
-    availabilityZones:
-      - eu-west-2a
-      - eu-west-2b
-      - eu-west-2c
+  accountID: 381491948780
