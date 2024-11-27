@@ -5,4 +5,5 @@ metadata:
 spec:
   name: example-app
   region: eu-west-2
+  environment: production
   accountID: 381491948780
