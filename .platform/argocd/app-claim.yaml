@@ -7,3 +7,11 @@ spec:
   region: eu-west-2
   environment: production
   accountID: 381491948780
+  database:
+    name: example-db
+    username: user
+    engine: postgres
+    class: db.t4g.micro
+    version: "17.2"
+    storage: 20
+    multiAz: true
