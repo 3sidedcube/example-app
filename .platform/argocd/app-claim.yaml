@@ -10,8 +10,8 @@ spec:
   database:
     name: exampledb
     username: exampleuser
-    engine: postgres
-    class: db.t4g.micro
-    version: "17.2"
+    engine: aurora-postgresql
+    version: "16.4"
     storage: 20
-    multiAz: false
+    # class: db.t4g.micro
+    # multiAz: false
