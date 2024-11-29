@@ -8,7 +8,7 @@ spec:
   environment: production
   accountID: 381491948780
   database:
-    name: example-db
+    name: exampledb
     username: user
     engine: postgres
     class: db.t4g.micro
