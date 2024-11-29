@@ -9,7 +9,7 @@ spec:
   accountID: 381491948780
   database:
     name: exampledb
-    username: user
+    username: exampleuser
     engine: postgres
     class: db.t4g.micro
     version: "17.2"
