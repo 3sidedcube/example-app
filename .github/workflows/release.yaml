@@ -1,0 +1,17 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+    steps:
+      - id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          release-type: simple
