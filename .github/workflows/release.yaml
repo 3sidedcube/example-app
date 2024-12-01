@@ -20,7 +20,7 @@ jobs:
   deploy-test:
     name: Deploy to Test
     runs-on: ubuntu-latest
-    if: ${{ needs.release-please.outputs.releases_created == "false" }}
+    if: ${{ needs.release-please.outputs.releases_created == 'false' }}
     needs: release-please
     steps:
       - run: echo "Deploying to test!"
@@ -28,7 +28,7 @@ jobs:
   deploy-staging:
     name: Deploy to Staging
     runs-on: ubuntu-latest
-    if: ${{ needs.release-please.outputs.releases_created == "true" }}
+    if: ${{ needs.release-please.outputs.releases_created == 'true' }}
     needs: release-please
     steps:
       - run: echo "Deploying to staging!
