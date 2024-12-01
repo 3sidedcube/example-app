@@ -31,3 +31,9 @@ module "crossplane" {
   project_name = local.project_name
   environment  = local.environment
 }
+
+module "service" {
+  source = "../../modules/service"
+
+  image_version = "0.1.0"
+}
