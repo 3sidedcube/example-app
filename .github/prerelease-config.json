@@ -1,5 +1,7 @@
 {
   "release-type": "simple",
+  "prerelease": true,
+  "versioning": "prerelease",
   "packages": {
     ".": {
       "type": "generic",

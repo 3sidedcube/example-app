@@ -1,34 +1,14 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
-    outputs:
-      releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
       - id: release
         uses: googleapis/release-please-action@v4
         with:
           config-file: ".github/release-config.json"
           manifest-file: ".github/release-manifest.json"
-
-  deploy-test:
-    name: Deploy to Test
-    runs-on: ubuntu-latest
-    if: ${{ needs.release-please.outputs.releases_created == 'false' }}
-    needs: release-please
-    steps:
-      - run: echo "Deploying to test!"
-
-  deploy-staging:
-    name: Deploy to Staging
-    runs-on: ubuntu-latest
-    if: ${{ needs.release-please.outputs.releases_created == 'true' }}
-    needs: release-please
-    steps:
-      - run: echo "Deploying to staging!"
