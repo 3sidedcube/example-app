@@ -14,8 +14,8 @@ jobs:
       - id: release
         uses: googleapis/release-please-action@v4
         with:
-          config-file: ".github/release-please-config.json"
-          manifest-file: ".github/.release-please-manifest.json"
+          config-file: ".github/release-config.json"
+          manifest-file: ".github/release-manifest.json"
 
   deploy-test:
     name: Deploy to Test
