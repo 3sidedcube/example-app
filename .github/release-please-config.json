@@ -4,7 +4,7 @@
   "packages": {
     ".": {
       "type": "generic",
-      "extra-files": [".platform/terraform/environments/production/main.tf"]
+      "extra-files": ["../.platform/terraform/environments/production/main.tf"]
     }
   }
 }
