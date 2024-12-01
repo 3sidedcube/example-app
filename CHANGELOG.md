@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0-beta](https://github.com/3sidedcube/example-app/compare/v1.0.0...v1.1.0-beta) (2024-12-01)
+
+
+### Features
+
+* **github:** enable prerelease ([79be0ad](https://github.com/3sidedcube/example-app/commit/79be0ad1d73e4df21f505b8e72af5c83c25db164))
+* **terraform:** add mock service module ([6311626](https://github.com/3sidedcube/example-app/commit/6311626c4bd7b5e775ebfdab29c3c2f9949f9a51))
+
+
+### Bug Fixes
+
+* **github:** add missing quote ([01da274](https://github.com/3sidedcube/example-app/commit/01da2743cba1dae30569258d6e3848ac66ed5f1b))
+* **github:** add prerelease type ([2e6f219](https://github.com/3sidedcube/example-app/commit/2e6f219c2be582f38b7b89050554368238b9d509))
+* **github:** change versioning strategy to prerelease ([6a36fab](https://github.com/3sidedcube/example-app/commit/6a36fab573cda7b687c55cc0b2f9d1f92141d21a))
+* **github:** move release config ([7cfa2ff](https://github.com/3sidedcube/example-app/commit/7cfa2ff5516ea8d075c1d9e19b6ad334b71dce1d))
+* **github:** move release please files ([250757a](https://github.com/3sidedcube/example-app/commit/250757a3c5ec1c3f0d506a2767844e3c51394f0a))
+* **github:** update extra-files path ([cad8f78](https://github.com/3sidedcube/example-app/commit/cad8f78ba620f497ce956a732f828682436c1e1d))
+* **github:** update extra-files path ([32ff6e8](https://github.com/3sidedcube/example-app/commit/32ff6e8a0cd20f5f46e384ccc0f4104c1a1d2eb7))
+* readme ([22d957e](https://github.com/3sidedcube/example-app/commit/22d957e05f00d9fa4924dcba44122f9dfc2005be))
+
 ## 1.0.0 (2024-12-01)
 
 
