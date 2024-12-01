@@ -1,11 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
   "release-type": "simple",
-  "prerelease": true,
   "packages": {
     ".": {
       "type": "generic",
-      "extra-files": [".platform/terraform/environments/production/main.tf"]
+      "extra-files": [".platform/terraform/environments/production/main.tf"],
+      "prerelease": true,
+      "prerelease-type": "beta"
     }
   }
 }
