@@ -15,3 +15,19 @@ jobs:
         uses: googleapis/release-please-action@v4
         with:
           release-type: simple
+
+  deploy-test:
+    name: Deploy to Test
+    runs-on: ubuntu-latest
+    if: ${{ !needs.release-please.outputs.releases_created }}
+    needs: release-please
+    steps:
+      - run: echo "Deploying to test!"
+
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    if: ${{ needs.release-please.outputs.releases_created }}
+    needs: release-please
+    steps:
+      - run: echo "Deploying to staging!"
