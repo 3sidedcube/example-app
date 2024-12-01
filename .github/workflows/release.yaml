@@ -33,4 +33,4 @@ jobs:
     if: ${{ needs.release-please.outputs.releases_created == 'true' }}
     needs: release-please
     steps:
-      - run: echo "Deploying to staging!
+      - run: echo "Deploying to staging!"
