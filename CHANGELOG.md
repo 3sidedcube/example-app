@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0-beta.1](https://github.com/3sidedcube/example-app/compare/v1.1.0-beta...v1.1.0-beta.1) (2024-12-01)
+
+
+### Bug Fixes
+
+* **github:** remove prerelease type ([296e0f3](https://github.com/3sidedcube/example-app/commit/296e0f3150421a3be1526ce82e71f110e368f543))
+
 ## [1.1.0-beta](https://github.com/3sidedcube/example-app/compare/v1.0.0...v1.1.0-beta) (2024-12-01)
 
 
