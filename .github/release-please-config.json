@@ -6,7 +6,8 @@
       "type": "generic",
       "extra-files": [".platform/terraform/environments/production/main.tf"],
       "prerelease": true,
-      "prerelease-type": "beta"
+      "prerelease-type": "beta",
+      "versioning": "prerelease"
     }
   }
 }
