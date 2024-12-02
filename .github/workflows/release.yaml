@@ -15,3 +15,11 @@ jobs:
     steps:
       - name: Run terraform apply
         run: echo "Applying terraform on 'production' ..."
+
+      - name: Sync prerelease manifest
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          MANIFEST_PATH: .github/prerelease-manifest.json
+        run: |
+          jq --arg tag "${RELEASE_TAG//v/}" '.["."] = $tag' $MANIFEST_PATH > temp.json \
+            && mv temp.json $MANIFEST_PATH
