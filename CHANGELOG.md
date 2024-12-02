@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.1-beta](https://github.com/3sidedcube/example-app/compare/v1.1.0...v1.1.1-beta) (2024-12-02)
+
+
+### Bug Fixes
+
+* add missing staging terraform ([ef2b655](https://github.com/3sidedcube/example-app/commit/ef2b6551dfd755074d5a16be2fd5e607403f367b))
+* added change ([f2d4871](https://github.com/3sidedcube/example-app/commit/f2d4871eb08dbba7e774b2058fe54da67aca8c74))
+* **github:** add missing production workflow ([a009c84](https://github.com/3sidedcube/example-app/commit/a009c84a31a2a117aa9dd82e7a4307ecfb245ad7))
+* **github:** add prerelease type ([e167329](https://github.com/3sidedcube/example-app/commit/e1673290c7a01e31157e1c0abfe83ceea07d0239))
+* **github:** add release-type ([4f61d42](https://github.com/3sidedcube/example-app/commit/4f61d425f8ab46c834e0a13d0e549b07845edad4))
+* **github:** remove prerelease-type ([8a8be2b](https://github.com/3sidedcube/example-app/commit/8a8be2bd3975bb6cb12567c44fb4d46c3796b430))
+* **github:** use release manifest ([c1d8655](https://github.com/3sidedcube/example-app/commit/c1d8655a63fad575f7ce93203834850db2f56302))
+
 ## [1.1.0](https://github.com/3sidedcube/example-app/compare/v1.0.0...v1.1.0) (2024-12-02)
 
 
