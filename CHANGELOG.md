@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1-beta.1](https://github.com/3sidedcube/example-app/compare/v1.2.1-beta...v1.2.1-beta.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* **github:** add contains beta check ([618dbe5](https://github.com/3sidedcube/example-app/commit/618dbe54315ee01ea821713fd138fd2f93f6b255))
+* **github:** add push to pr ([3df6e61](https://github.com/3sidedcube/example-app/commit/3df6e6196b3e428d14b8b786e51756f417cf69f5))
+
 ## [1.2.1-beta](https://github.com/3sidedcube/example-app/compare/v1.2.0...v1.2.1-beta) (2024-12-02)
 
 
