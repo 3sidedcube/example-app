@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0-beta](https://github.com/3sidedcube/example-app/compare/v1.3.0...v1.4.0-beta) (2024-12-02)
+
+
+### Features
+
+* add issue templates ([874febe](https://github.com/3sidedcube/example-app/commit/874febe0265c70237d55016896509f4c37d1eb96))
+
 ## [1.3.0](https://github.com/3sidedcube/example-app/compare/v1.2.3...v1.3.0) (2024-12-02)
 
 
