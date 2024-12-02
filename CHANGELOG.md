@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0-beta.2](https://github.com/3sidedcube/example-app/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2024-12-02)
+
+
+### Bug Fixes
+
+* remove deployment.yaml ([cd66779](https://github.com/3sidedcube/example-app/commit/cd66779afe7112d2f48af07fa2b3d0c8887d556a))
+
 ## [1.1.0-beta.1](https://github.com/3sidedcube/example-app/compare/v1.1.0-beta...v1.1.0-beta.1) (2024-12-01)
 
 
