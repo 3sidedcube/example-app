@@ -36,6 +36,6 @@ module "service" {
   source = "../../modules/service"
 
   # x-release-please-start-version
-  image_version = "1.2.0"
+  image_version = "1.2.1"
   # x-release-please-end
 }
