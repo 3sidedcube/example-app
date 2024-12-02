@@ -16,6 +16,7 @@ jobs:
       tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
       - id: release
+        name: Run release-please
         uses: googleapis/release-please-action@v4
         with:
           config-file: ".github/prerelease-config.json"
@@ -33,7 +34,8 @@ jobs:
           echo "${{ vars.EXAMPLE_VAR }}"
           echo "${{ secrets.EXAMPLE_SECRET }}"
 
-      - run: echo "Deploying to test!"
+      - name: Deploy
+        run: echo "Deploying to test!"
 
   deploy-staging:
     name: Deploy to Staging
@@ -47,9 +49,10 @@ jobs:
           echo "${{ vars.EXAMPLE_VAR }}"
           echo "${{ secrets.EXAMPLE_SECRET }}"
 
-      - run: echo "Deploying to staging!"
+      - name: Deploy
+        run: echo "Deploying to staging!"
 
-      - id: release
+      - name: Run release-please
         uses: googleapis/release-please-action@v4
         with:
           config-file: ".github/release-config.json"
@@ -67,8 +70,8 @@ jobs:
           echo "${{ vars.EXAMPLE_VAR }}"
           echo "${{ secrets.EXAMPLE_SECRET }}"
 
-      - name: Run terraform apply
-        run: echo "Applying terraform on 'production' ..."
+      - name: Deploy
+        run: echo "Deploying to production!"
 
       - name: Checkout
         uses: actions/checkout@v4
