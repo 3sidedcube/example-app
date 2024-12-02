@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0-beta.1](https://github.com/3sidedcube/example-app/compare/v1.4.0-beta...v1.4.0-beta.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* change ([561c794](https://github.com/3sidedcube/example-app/commit/561c794443c475cad559e12b05511ae9909e5bfb))
+
 ## [1.4.0-beta](https://github.com/3sidedcube/example-app/compare/v1.3.0...v1.4.0-beta) (2024-12-02)
 
 
