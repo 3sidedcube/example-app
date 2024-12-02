@@ -1,0 +1,17 @@
+name: Release
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    if: github.event.release.prerelease == false
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+    steps:
+      - name: Run terraform apply
+        run: echo "Applying terraform on 'production' ..."
