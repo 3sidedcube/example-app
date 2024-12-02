@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0-beta.3](https://github.com/3sidedcube/example-app/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2024-12-02)
+
+
+### Bug Fixes
+
+* remove docs ([7bcb2ff](https://github.com/3sidedcube/example-app/commit/7bcb2ff75839a0471234e995a71774bdb3abd852))
+
 ## [1.1.0-beta.2](https://github.com/3sidedcube/example-app/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2024-12-02)
 
 
