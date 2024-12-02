@@ -67,3 +67,17 @@ jobs:
           git add . $MANIFEST_PATH
           git commit -m "chore: sync release manifests"
           git push
+
+  publish:
+    name: Publish images
+    runs-on: ubuntu-latest
+    needs: deploy-production
+    strategy:
+      matrix:
+        arch: [amd64, arm64]
+    steps:
+      - name: Build
+        run: echo "Building for '${{ matrix.arch }}' ..."
+
+      - name: Publish
+        run: echo "Publishing for '${{ matrix.arch }}' ..."
