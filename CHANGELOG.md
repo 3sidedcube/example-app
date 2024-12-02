@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0-beta.2](https://github.com/3sidedcube/example-app/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2024-12-02)
+
+
+### Features
+
+* **github:** add example vars and secrets ([1090e0c](https://github.com/3sidedcube/example-app/commit/1090e0c72e12d0ed3265d17fea5be11fe53e9dfd))
+
+
+### Bug Fixes
+
+* **github:** add missing meta ([b448c64](https://github.com/3sidedcube/example-app/commit/b448c64f4428ffa25131b646a4ebc34dfaca7e63))
+
 ## [1.3.0-beta.1](https://github.com/3sidedcube/example-app/compare/v1.3.0-beta...v1.3.0-beta.1) (2024-12-02)
 
 
