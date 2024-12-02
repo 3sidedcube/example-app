@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.2](https://github.com/3sidedcube/example-app/compare/v1.2.1...v1.2.2) (2024-12-02)
+
+
+### Bug Fixes
+
+* **github:** use job release step output ([d3e5b00](https://github.com/3sidedcube/example-app/commit/d3e5b00f8611f88ff06e8f6d53b05be364058380))
+* **github:** use pr sha ([0a17830](https://github.com/3sidedcube/example-app/commit/0a178303c4236c4cdfa4b9b15f034b4c02abe95a))
+* **github:** use prerelease manifest ([b2e78f1](https://github.com/3sidedcube/example-app/commit/b2e78f1b080c95ce364ca390cd14a3ae39395e33))
+
 ## [1.2.2-beta.1](https://github.com/3sidedcube/example-app/compare/v1.2.2-beta...v1.2.2-beta.1) (2024-12-02)
 
 
