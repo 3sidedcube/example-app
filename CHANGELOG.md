@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.3-beta](https://github.com/3sidedcube/example-app/compare/v1.2.2...v1.2.3-beta) (2024-12-02)
+
+
+### Bug Fixes
+
+* **github:** move sync step ([5d11ba5](https://github.com/3sidedcube/example-app/commit/5d11ba50e36f3c460df18a31de92d51f4f79cdad))
+* **github:** prelease manifest update ([c125e86](https://github.com/3sidedcube/example-app/commit/c125e860af10d8dda2f04d91950a6eea0a75174a))
+
 ## [1.2.2](https://github.com/3sidedcube/example-app/compare/v1.2.1...v1.2.2) (2024-12-02)
 
 
