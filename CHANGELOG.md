@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2-beta.1](https://github.com/3sidedcube/example-app/compare/v1.2.2-beta...v1.2.2-beta.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* **github:** use job release step output ([d3e5b00](https://github.com/3sidedcube/example-app/commit/d3e5b00f8611f88ff06e8f6d53b05be364058380))
+
 ## [1.2.2-beta](https://github.com/3sidedcube/example-app/compare/v1.2.1...v1.2.2-beta) (2024-12-02)
 
 
