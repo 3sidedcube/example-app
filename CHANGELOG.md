@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0-beta.1](https://github.com/3sidedcube/example-app/compare/v1.3.0-beta...v1.3.0-beta.1) (2024-12-02)
+
+
+### Features
+
+* **github:** add concurrency ([a0f79ff](https://github.com/3sidedcube/example-app/commit/a0f79ffc6ad9765a5bb1d39ee245d28279e0be62))
+
 ## [1.3.0-beta](https://github.com/3sidedcube/example-app/compare/v1.2.3...v1.3.0-beta) (2024-12-02)
 
 
