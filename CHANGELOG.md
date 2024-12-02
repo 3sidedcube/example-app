@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1-beta.3](https://github.com/3sidedcube/example-app/compare/v1.1.1-beta.2...v1.1.1-beta.3) (2024-12-02)
+
+
+### Bug Fixes
+
+* **github:** correct release manifest ([a43edb6](https://github.com/3sidedcube/example-app/commit/a43edb6defdbcc4b35f4811d342c232a4e082a17))
+
 ## [1.1.1-beta.2](https://github.com/3sidedcube/example-app/compare/v1.1.1-beta.1...v1.1.1-beta.2) (2024-12-02)
 
 
