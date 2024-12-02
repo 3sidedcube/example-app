@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0-beta](https://github.com/3sidedcube/example-app/compare/v1.2.3...v1.3.0-beta) (2024-12-02)
+
+
+### Features
+
+* **github:** add matrix example ([1a69197](https://github.com/3sidedcube/example-app/commit/1a69197bbe2a8257b5b463c4025e4f03aa0b1b3b))
+
 ## [1.2.3](https://github.com/3sidedcube/example-app/compare/v1.2.2...v1.2.3) (2024-12-02)
 
 
