@@ -49,7 +49,7 @@ jobs:
 
       - name: Sync prerelease manifest
         env:
-          RELEASE_TAG: ${{ needs.release-please.outputs.tag_name }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag_name }}
         run: |
           jq --arg tag "${RELEASE_TAG//v/}" '.["."] = $tag' $MANIFEST_PATH > temp.json \
             && mv temp.json $MANIFEST_PATH
