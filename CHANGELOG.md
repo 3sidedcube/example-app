@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1-beta](https://github.com/3sidedcube/example-app/compare/v1.2.0...v1.2.1-beta) (2024-12-02)
+
+
+### Bug Fixes
+
+* **github:** prerelease flow ([7b04695](https://github.com/3sidedcube/example-app/commit/7b04695af07e7d341d05fb9d25f4f3b534d96ada))
+
 ## [1.2.0](https://github.com/3sidedcube/example-app/compare/v1.1.1...v1.2.0) (2024-12-02)
 
 
