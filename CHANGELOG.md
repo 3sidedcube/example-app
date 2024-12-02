@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/3sidedcube/example-app/compare/v1.2.3...v1.3.0) (2024-12-02)
+
+
+### Features
+
+* **github:** add concurrency ([a0f79ff](https://github.com/3sidedcube/example-app/commit/a0f79ffc6ad9765a5bb1d39ee245d28279e0be62))
+* **github:** add example vars and secrets ([1090e0c](https://github.com/3sidedcube/example-app/commit/1090e0c72e12d0ed3265d17fea5be11fe53e9dfd))
+* **github:** add matrix example ([1a69197](https://github.com/3sidedcube/example-app/commit/1a69197bbe2a8257b5b463c4025e4f03aa0b1b3b))
+
+
+### Bug Fixes
+
+* **github:** add missing meta ([b448c64](https://github.com/3sidedcube/example-app/commit/b448c64f4428ffa25131b646a4ebc34dfaca7e63))
+
 ## [1.3.0-beta.2](https://github.com/3sidedcube/example-app/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2024-12-02)
 
 
