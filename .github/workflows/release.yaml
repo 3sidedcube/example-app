@@ -1,4 +1,4 @@
-name: Prerelease
+name: Release
 
 on:
   push:
@@ -31,6 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.release-please.outputs.releases_created == 'true' && contains(needs.release-please.outputs.releases_created, 'beta') }}
     needs: release-please
+    env:
+      MANIFEST_PATH: .github/prerelease-manifest.json
     steps:
       - run: echo "Deploying to staging!"
 
@@ -39,19 +41,31 @@ jobs:
           config-file: ".github/release-config.json"
           manifest-file: ".github/release-manifest.json"
 
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Sync prerelease manifest
+        env:
+          RELEASE_TAG: ${{ needs.release-please.outputs.tag_name }}
+        run: |
+          jq --arg tag "${RELEASE_TAG//v/}" '.["."] = $tag' $MANIFEST_PATH > temp.json \
+            && mv temp.json $MANIFEST_PATH
+
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add . $MANIFEST_PATH
+          git commit -m "chore: sync release manifests"
+          git push
+
   deploy-production:
-    name: Deploy to production
+    name: Deploy to Production
     runs-on: ubuntu-latest
     if: ${{ needs.release-please.outputs.releases_created == 'true' && !contains(needs.release-please.outputs.releases_created, 'beta') }}
     needs: release-please
     steps:
       - name: Run terraform apply
         run: echo "Applying terraform on 'production' ..."
-
-      - name: Sync prerelease manifest
-        env:
-          RELEASE_TAG: ${{ needs.release-please.outputs.tag_name }}
-          MANIFEST_PATH: .github/prerelease-manifest.json
-        run: |
-          jq --arg tag "${RELEASE_TAG//v/}" '.["."] = $tag' $MANIFEST_PATH > temp.json \
-            && mv temp.json $MANIFEST_PATH
