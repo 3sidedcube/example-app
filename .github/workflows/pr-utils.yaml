@@ -1,7 +1,7 @@
 name: Pull request utilities
 
 on:
-  - pull_request
+  pull_request:
 
 jobs:
   labeler:
