@@ -25,13 +25,6 @@ provider "aws" {
   }
 }
 
-module "crossplane" {
-  source = "git@github.com:3sidedcube/terraform-aws-crossplane-access.git?ref=v0.1.7"
-
-  project_name = local.project_name
-  environment  = local.environment
-}
-
 module "service" {
   source = "../../modules/service"
 
