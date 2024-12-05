@@ -17,5 +17,5 @@ spec:
     multiAz: false
   service:
     cpu: "512"
-    memory: "128"
+    memory: "1024"
     port: 3000
