@@ -20,4 +20,4 @@ spec:
     memory: "1024"
     port: 3000
   dns:
-    name: example.com
+    name: example-app.idp.3sidedcube.com
