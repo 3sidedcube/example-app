@@ -18,6 +18,6 @@ spec:
   service:
     cpu: "512"
     memory: "1024"
-    port: 3000
+    port: 80
   dns:
     name: example-app.idp.3sidedcube.com
