@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.1](https://github.com/3sidedcube/example-app/compare/v1.4.0...v1.4.1) (2024-12-10)
+
+
+### Bug Fixes
+
+* add dns to name ([d214c2c](https://github.com/3sidedcube/example-app/commit/d214c2c695807bef0a4c9c4eecb7746445961263))
+* add service to claim ([349262b](https://github.com/3sidedcube/example-app/commit/349262b28ad991a065c0380b8df30c689698773d))
+* **backstage:** update catalog info ([#34](https://github.com/3sidedcube/example-app/issues/34)) ([dd2b58c](https://github.com/3sidedcube/example-app/commit/dd2b58cfeb40b8b20ba0a582c626f16509011a19))
+* some fix ([#36](https://github.com/3sidedcube/example-app/issues/36)) ([86a758b](https://github.com/3sidedcube/example-app/commit/86a758b7fce29cbc3b35f68ff484de4512e66110))
+* **terraform:** remove crossplane module ([7951f8c](https://github.com/3sidedcube/example-app/commit/7951f8c7de0d03dc2702fd72d1bc69011f359661))
+* update container port ([f67a585](https://github.com/3sidedcube/example-app/commit/f67a58580cae22956c3073f0b46eee637dd48ae0))
+* update db engine on the claim ([0e073ac](https://github.com/3sidedcube/example-app/commit/0e073ac12bd1c302e8ed7b7a8445f1e6c3ebcf59))
+* update dns name ([462304f](https://github.com/3sidedcube/example-app/commit/462304f8acf7cb92d7530a7a68136336e3d7d514))
+* update memory on the claim ([bce2ea2](https://github.com/3sidedcube/example-app/commit/bce2ea2e137e2f5a8d19b54f2b79444976c9fd1c))
+
 ## [1.4.1-beta.1](https://github.com/3sidedcube/example-app/compare/v1.4.1-beta...v1.4.1-beta.1) (2024-12-10)
 
 
