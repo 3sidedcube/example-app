@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: { { cookiecutter.name } }
-  description: { { cookiecutter.description } }
+  name: example-app
+  description: An example app of various things
   annotations:
     backstage.io/source-location: url:https://github.com/3sidedcube/example-app
     backstage.io/techdocs-ref: dir:../..
