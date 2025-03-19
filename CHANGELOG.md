@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.2-beta](https://github.com/3sidedcube/example-app/compare/v1.4.1...v1.4.2-beta) (2025-03-19)
+
+
+### Bug Fixes
+
+* sync manifest during production deployments ([31cedd2](https://github.com/3sidedcube/example-app/commit/31cedd25f6e190f578f9ef571ae758451b57cbbe))
+* sync manifest when triggering production deployments ([#38](https://github.com/3sidedcube/example-app/issues/38)) ([31cedd2](https://github.com/3sidedcube/example-app/commit/31cedd25f6e190f578f9ef571ae758451b57cbbe))
+
 ## [1.4.1](https://github.com/3sidedcube/example-app/compare/v1.4.0...v1.4.1) (2024-12-10)
 
 
