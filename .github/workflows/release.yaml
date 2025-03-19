@@ -14,6 +14,7 @@ jobs:
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
+      pr: ${{ steps.release.outputs.pr }}
     steps:
       - id: release
         name: Run release-please
@@ -21,6 +22,30 @@ jobs:
         with:
           config-file: ".github/prerelease-config.json"
           manifest-file: ".github/prerelease-manifest.json"
+          fork: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout PR branch
+        if: ${{ steps.release.outputs.pr }}
+        uses: actions/checkout@v4
+        with:
+          ref: release-please--branches--main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Update prerelease manifest
+        if: ${{ steps.release.outputs.pr }}
+        env:
+          MANIFEST_PATH: .github/prerelease-manifest.json
+          RELEASE_TAG: ${{ steps.release.outputs.tag_name }}
+        run: |
+          jq --arg tag "${RELEASE_TAG//v/}" '.["."] = $tag' $MANIFEST_PATH > temp.json \
+            && mv temp.json $MANIFEST_PATH
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add $MANIFEST_PATH
+          git commit -m "chore: sync release manifests"
+          git push
 
   deploy-test:
     name: Deploy to Test
@@ -72,25 +97,6 @@ jobs:
 
       - name: Deploy
         run: echo "Deploying to production!"
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Sync prerelease manifest
-        env:
-          MANIFEST_PATH: .github/prerelease-manifest.json
-          RELEASE_TAG: ${{ needs.release-please.outputs.tag_name }}
-        run: |
-          jq --arg tag "${RELEASE_TAG//v/}" '.["."] = $tag' $MANIFEST_PATH > temp.json \
-            && mv temp.json $MANIFEST_PATH
-
-      - name: Commit change
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add . $MANIFEST_PATH
-          git commit -m "chore: sync release manifests"
-          git push
 
   publish:
     name: Publish images
