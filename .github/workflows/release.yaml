@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
 
 concurrency:
   group: release
@@ -24,27 +28,42 @@ jobs:
           manifest-file: ".github/prerelease-manifest.json"
           fork: false
           token: ${{ secrets.GITHUB_TOKEN }}
-
+  
+  update-manifest-in-pr:
+    runs-on: ubuntu-latest
+    needs: release-please
+    # Only run when a release PR is opened or updated, not when it's merged
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'release-please--branches--main' && github.event.pull_request.closed == false }}
+    steps:
       - name: Checkout PR branch
-        if: ${{ steps.release.outputs.pr }}
         uses: actions/checkout@v4
         with:
-          ref: release-please--branches--main
+          ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Update prerelease manifest
-        if: ${{ steps.release.outputs.pr }}
+      
+      - name: Extract new version
+        id: extract-version
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          if [[ $PR_TITLE =~ chore\(main\):[[:space:]]release[[:space:]]([0-9]+\.[0-9]+\.[0-9]+) ]]; then
+            echo "version=${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+          else
+            echo "version=" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Update prerelease manifest with new version
+        if: ${{ steps.extract-version.outputs.version != '' }}
         env:
           MANIFEST_PATH: .github/prerelease-manifest.json
-          RELEASE_TAG: ${{ steps.release.outputs.tag_name }}
+          VERSION: ${{ steps.extract-version.outputs.version }}
         run: |
-          jq --arg tag "${RELEASE_TAG//v/}" '.["."] = $tag' $MANIFEST_PATH > temp.json \
+          jq --arg tag "$VERSION" '.["."] = $tag' $MANIFEST_PATH > temp.json \
             && mv temp.json $MANIFEST_PATH
           
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add $MANIFEST_PATH
-          git commit -m "chore: sync release manifests"
+          git commit -m "chore: update prerelease manifest with version $VERSION"
           git push
 
   deploy-test:
@@ -97,6 +116,35 @@ jobs:
 
       - name: Deploy
         run: echo "Deploying to production!"
+        
+  sync-after-release:
+    name: Sync Release Manifest
+    runs-on: ubuntu-latest
+    # Only run when a release is created and PR is merged (push to main)
+    if: ${{ github.event_name == 'push' && needs.release-please.outputs.releases_created == 'true' }}
+    needs: release-please
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.RELEASE_TOKEN }}  # Use a token with repo scope
+      
+      - name: Update prerelease manifest
+        env:
+          MANIFEST_PATH: .github/prerelease-manifest.json
+          RELEASE_TAG: ${{ needs.release-please.outputs.tag_name }}
+        run: |
+          # Remove the 'v' prefix if present
+          VERSION="${RELEASE_TAG//v/}"
+          
+          jq --arg tag "$VERSION" '.["."] = $tag' $MANIFEST_PATH > temp.json \
+            && mv temp.json $MANIFEST_PATH
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add $MANIFEST_PATH
+          git commit -m "chore: sync prerelease manifest with version $VERSION"
+          git push
 
   publish:
     name: Publish images
