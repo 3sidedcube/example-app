@@ -8,7 +8,6 @@
       "type": "generic",
       "extra-files": [
         ".platform/terraform/environments/staging/main.tf",
-        ".github/prerelease-manifest.json"
       ]
     }
   }

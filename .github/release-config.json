@@ -4,8 +4,7 @@
     ".": {
       "type": "generic",
       "extra-files": [
-        ".platform/terraform/environments/production/main.tf",
-        ".github/prerelease-manifest.json"
+        ".platform/terraform/environments/production/main.tf"
       ]
     }
   }
