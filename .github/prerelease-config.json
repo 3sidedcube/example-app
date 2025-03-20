@@ -7,7 +7,7 @@
     ".": {
       "type": "generic",
       "extra-files": [
-        ".platform/terraform/environments/staging/main.tf",
+        ".platform/terraform/environments/staging/main.tf"
       ]
     }
   }
