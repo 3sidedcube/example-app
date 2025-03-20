@@ -19,12 +19,6 @@ jobs:
       releases_created: ${{ steps.release.outputs.releases_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.RELEASE_PAT }}
-
       - id: release
         name: Run release-please
         uses: googleapis/release-please-action@v4
